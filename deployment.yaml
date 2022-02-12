@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aplicacao-loja
+spec: 
+  replicas: 4
+  selector:
+     matchLabels:
+         name: aplicacao-loja
+  template:
+    metadata:
+      labels:
+        name: aplicacao-loja
+    spec:
+      containers:
+        - name: aplicacao-loja
+          image: rafanercessian/aplicacao-loja:v1
+          ports:
+            - containerPort: 80
